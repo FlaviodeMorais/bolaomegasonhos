@@ -1,0 +1,91 @@
+/* ═══════════════════════════════════════════
+   BOLÃO MEGA SONHOS — Design System
+   Base herdada do bolao-mega (Plus Jakarta Sans + JetBrains Mono)
+═══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── TOKENS ── */
+:root {
+  --f-sans:  'Plus Jakarta Sans', system-ui, sans-serif;
+  --f-mono:  'JetBrains Mono', monospace;
+
+  /* Brand */
+  --green:         #00A651;
+  --green-hover:   #008D45;
+  --green-light:   #E6F7EE;
+  --green-glow:    rgba(0,166,81,0.20);
+  --navy:          #0D1B2A;
+  --navy-2:        #132032;
+  --navy-3:        #1A2A3D;
+
+  /* Neutrals */
+  --white:         #FFFFFF;
+  --gray-50:       #F8FAFC;
+  --gray-100:      #F1F5F9;
+  --gray-200:      #E2E8F0;
+  --gray-300:      #CBD5E1;
+  --gray-400:      #94A3B8;
+  --gray-500:      #64748B;
+  --gray-600:      #475569;
+  --gray-700:      #334155;
+  --gray-800:      #1E293B;
+  --gray-900:      #0F172A;
+
+  /* Semantic */
+  --error:     #EF4444;
+  --warning:   #F59E0B;
+  --info:      #3B82F6;
+  --success:   #10B981;
+
+  /* Accents (marketplace) */
+  --amber:     #F59E0B;
+  --amber-d:   #D97706;
+  --pix-teal:  #32BCAD;
+  --purple:    #6D5CE6;
+
+  /* Elevation */
+  --e1: 0 1px 2px rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.10);
+  --e2: 0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+  --e3: 0 10px 25px rgba(0,0,0,.10), 0 4px 10px rgba(0,0,0,.08);
+  --e4: 0 20px 50px rgba(0,0,0,.15), 0 8px 20px rgba(0,0,0,.10);
+  --e-green: 0 8px 24px rgba(0,166,81,0.35);
+
+  /* Radius */
+  --r4:   4px;
+  --r8:   8px;
+  --r12:  12px;
+  --r16:  16px;
+  --r20:  20px;
+  --r24:  24px;
+  --pill: 100px;
+
+  /* Spacing (4px grid) */
+  --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px;
+  --s5: 20px; --s6: 24px; --s7: 28px; --s8: 32px;
+  --s10: 40px; --s12: 48px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--f-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gray-900);
+  background: var(--gray-50);
+  min-height: 100svh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── KEYFRAMES ── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }

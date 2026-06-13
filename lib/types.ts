@@ -1,4 +1,4 @@
-// Tipos do domínio bolaomegasonhos — refletem o schema "sonhos" (db/migrations/0001_init_sonhos_schema.sql)
+// Tipos do domínio bolaomegasonhos — refletem o schema "sonhos" (supabase/migrations/20260613000000_init_sonhos_schema.sql)
 
 export type Role = 'cliente' | 'admin'
 

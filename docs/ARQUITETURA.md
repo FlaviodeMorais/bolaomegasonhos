@@ -28,8 +28,9 @@ O **bolaomegasonhos**, inspirado no [unindosonhos.com.br](https://www.unindosonh
 ## 1. Modelo de Dados (schema `sonhos` no Supabase)
 
 Todas as tabelas vivem no schema `sonhos`, com migrations versionadas em
-`db/migrations/*.sql` (diferente do bolao-mega, que não tinha migrations rastreadas).
-Schema inicial completo: [`db/migrations/0001_init_sonhos_schema.sql`](../db/migrations/0001_init_sonhos_schema.sql).
+`supabase/migrations/*.sql` (aplicadas automaticamente em produção via integração
+GitHub do Supabase a cada push na `master`).
+Schema inicial completo: [`supabase/migrations/20260613000000_init_sonhos_schema.sql`](../supabase/migrations/20260613000000_init_sonhos_schema.sql).
 
 ### 1.1 Usuários e Carteira
 - **`usuarios`**: id (uuid), nome, email (unique), senha_hash, cpf (opcional), telefone, role (`cliente` | `admin`), email_verificado, created_at.
@@ -177,7 +178,7 @@ bolaomegasonhos/
 
 | Etapa | Entregável | Principais arquivos/áreas |
 |---|---|---|
-| **0 — Setup** | Scaffold Next.js + configs + README + doc de arquitetura + migration inicial do schema `sonhos` | raiz do projeto, `db/migrations/0001_init_sonhos_schema.sql` |
+| **0 — Setup** | Scaffold Next.js + configs + README + doc de arquitetura + migration inicial do schema `sonhos` | raiz do projeto, `supabase/migrations/20260613000000_init_sonhos_schema.sql` |
 | **1 — Autenticação** | Cadastro/login/logout, sessão JWT, middleware de rotas protegidas | `lib/auth.ts`, `app/(auth)/*`, `app/api/auth/*`, `middleware.ts` |
 | **2 — Domínio core** | CRUD admin de loterias, concursos e bolões (incl. `jogos_bolao`) | `app/admin/{loterias,concursos,boloes}`, `app/api/admin/*` |
 | **3 — Catálogo público** | `/boloes` com filtros, cards, modal "ver jogo" | `app/boloes/*`, `components/catalog/*` |
@@ -199,7 +200,7 @@ permitindo revisão incremental antes de avançar.
 - [x] `package.json`, `tsconfig.json`, `next.config.js`, `.gitignore`, `.env.example`
 - [x] `lib/supabase.ts` apontando para o schema `sonhos`
 - [x] `lib/types.ts` com os tipos do domínio
-- [x] `db/migrations/0001_init_sonhos_schema.sql`
+- [x] `supabase/migrations/20260613000000_init_sonhos_schema.sql`
 - [x] `app/layout.tsx` + `app/globals.css` (design tokens) + `app/page.tsx` placeholder
 - [x] `README.md` + este documento
 - [ ] Repositório conectado ao remoto e push inicial (a cargo do usuário)

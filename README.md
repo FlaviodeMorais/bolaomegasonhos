@@ -31,8 +31,8 @@ Abrir [http://localhost:3000](http://localhost:3000).
 
 ## Banco de dados
 
-O schema inicial está em [`db/migrations/0001_init_sonhos_schema.sql`](db/migrations/0001_init_sonhos_schema.sql).
-Execute essa migration no projeto Supabase compartilhado para criar o schema `sonhos`
+As migrations vivem em [`supabase/migrations/`](supabase/migrations/) e são aplicadas
+automaticamente em produção via integração GitHub do Supabase a cada push na `master`.
 e suas tabelas (usuários, carteira, loterias, concursos, bolões, cotas, pedidos, rateios, saques).
 
 ## Status
